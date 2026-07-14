@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Hide Streamlit default header & footer */
+header[data-testid="stHeader"],
+footer {
+    display: none !important;
+}
+
+/* Light-grey page background */
+html, body, .stApp,
+[data-testid="stAppViewContainer"] {
+    background-color: #f3f4f6 !important;
+}
+
+/* Remove top padding */
+.block-container {
+    padding-top: 1.5rem !important;
+}
+
+/* Card container selectors */
+[data-key="date_card_container"], .st-key-date_card_container,
+[data-key="reviews_card_container"], .st-key-reviews_card_container,
+[data-key="breakdown_card_container"], .st-key-breakdown_card_container,
+[data-key="trend_card_container"], .st-key-trend_card_container,
+[data-key="wordcloud_card_container"], .st-key-wordcloud_card_container,
+[data-key="top_words_card_container"], .st-key-top_words_card_container,
+[data-testid="stVerticalBlockBorderWrapper"],
+div[data-testid="stVerticalBlockBorderDiv"] {
+    background-color: #ffffff !important;
+    border: none !important;
+    border-radius: 14px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Padding for large wrappers and main container blocks */
+[data-key="breakdown_card_container"], .st-key-breakdown_card_container,
+[data-key="trend_card_container"], .st-key-trend_card_container,
+[data-key="wordcloud_card_container"], .st-key-wordcloud_card_container,
+[data-key="top_words_card_container"], .st-key-top_words_card_container,
+[data-testid="stVerticalBlockBorderWrapper"],
+div[data-testid="stVerticalBlockBorderDiv"] {
+    padding: 20px 24px !important;
+}
+
+/* Height and padding for date & reviews cards */
+[data-key="date_card_container"], .st-key-date_card_container,
+[data-key="reviews_card_container"], .st-key-reviews_card_container {
+    min-height: 85px !important;
+    height: 85px !important;
+    padding: 10px 16px !important;
+}
+
+/* Ensure equal height for Left and Right main card sections */
+/* [data-key="trend_card_container"],
+.st-key-trend_card_container {
+    height: 450px !important;
+    min-height: 450px !important;
+} */
+
+[data-key="breakdown_card_container"], .st-key-breakdown_card_container,
+[data-key="wordcloud_card_container"], .st-key-wordcloud_card_container,
+[data-key="top_words_card_container"], .st-key-top_words_card_container 
+{
+    height: 353px !important;
+    min-height: 353px !important;
+}
+
+/* Center reviews card text vertically and horizontally */
+[data-key="reviews_card_container"] [data-testid="element-container"],
+.st-key-reviews_card_container [data-testid="element-container"] {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+[data-key="reviews_card_container"] [data-testid="stMarkdownContainer"],
+[data-key="reviews_card_container"] [data-testid="stMarkdownContainer"] p,
+.st-key-reviews_card_container [data-testid="stMarkdownContainer"],
+.st-key-reviews_card_container [data-testid="stMarkdownContainer"] p {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100% !important;
+}
+
+.section-header {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #1a1a2e;
+}
+
+.main-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin: 0;
+    padding: 0;
+}
+
+.top-bar-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 4px;
+}
+
+.top-bar-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    line-height: 1.2;
+}
