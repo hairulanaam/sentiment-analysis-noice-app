@@ -1,3 +1,4 @@
+import threading
 from pathlib import Path
 import streamlit as st
 from components.filters import date_filter
@@ -5,6 +6,7 @@ from components.header import header
 from components.sentiment_breakdown import sentiment_breakdown, reviews_card
 from components.sentiment_trend import sentiment_trend
 from components.top_words_chart import top_words
+from components.try_sentence import load_model, sentiment_dialog
 from components.wordcloud_chart import wordcloud_chart
 from utils.data_loader import (
     compute_polarity_counts,
@@ -19,6 +21,16 @@ st.set_page_config(
 )
 css_path = Path(__file__).parent / "styles" / "dashboard.css"
 st.markdown(f"<style>{css_path.read_text()}</style>", unsafe_allow_html=True)
+
+def _warm_up_model():
+    try:
+        load_model()
+    except Exception:
+        pass
+
+if "model_warmed" not in st.session_state:
+    st.session_state.model_warmed = True
+    threading.Thread(target=_warm_up_model, daemon=True).start()
 
 try:
     df = load_data()

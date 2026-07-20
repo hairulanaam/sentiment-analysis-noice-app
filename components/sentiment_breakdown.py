@@ -54,4 +54,4 @@ def sentiment_breakdown(counts):
             height=250,
         )
 
-        st.plotly_chart(fig, use_container_width=True, key="sentiment_donut")
+        st.plotly_chart(fig, use_container_width=True, key="sentiment_donut", config={"displayModeBar": False})

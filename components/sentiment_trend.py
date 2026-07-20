@@ -86,6 +86,6 @@ def sentiment_trend(df_filtered, total_responses):
                 showlegend=False,
                 hovermode='x unified',
             )
-            st.plotly_chart(fig, use_container_width=True, key="sentiment_line")
+            st.plotly_chart(fig, use_container_width=True, key="sentiment_line", config={"displayModeBar": False})
         else:
             st.info("No data available for the selected date range.")

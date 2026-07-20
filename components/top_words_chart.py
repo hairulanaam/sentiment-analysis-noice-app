@@ -6,7 +6,7 @@ from utils.data_loader import compute_top_words
 def top_words(df_filtered):
     with st.container(border=True, key="top_words_card_container"):
         st.markdown(
-            '<div class="section-header">Top 10 Words</div>',
+            '<div class="section-header">Top Words</div>',
             unsafe_allow_html=True,
         )
 
@@ -43,6 +43,6 @@ def top_words(df_filtered):
                 textfont=dict(size=12, color='white', family=FONT_FAMILY),
                 marker=dict(line=dict(width=0)),
             )
-            st.plotly_chart(fig, use_container_width=True, key="top_words_chart")
+            st.plotly_chart(fig, use_container_width=True, key="top_words_chart", config={"displayModeBar": False})
         else:
             st.info("No words found for top 10 frequencies.")
